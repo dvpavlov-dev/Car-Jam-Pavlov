@@ -5,7 +5,7 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
 {
     public class GenerateParking : MonoBehaviour
     {
-        [SerializeField] private GameObject _platformView;
+        [SerializeField] private GameObject _parkingSpace;
     
         [SerializeField, Range(1,4)] private int _widthCar = 4;
         [SerializeField, Range(1,3)] private int _heightCar = 1;
@@ -47,19 +47,19 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
                     float width = isHorizontal ? _widthCar : _heightCar;
                     float height = isHorizontal ? _heightCar : _widthCar;
                 
-                    if (CanPlaceRectangle(x, z, width, height))
+                    if (CanPlaceParkingSpace(x, z, width, height))
                     {
-                        PlaceRectangle(x, z, width, height);
+                        PlaceParkingSpace(x, z, width, height);
                     }
-                    else if(CanPlaceRectangle(x, z, height,width))
+                    else if(CanPlaceParkingSpace(x, z, height,width))
                     {
-                        PlaceRectangle(x, z, height,width);
+                        PlaceParkingSpace(x, z, height,width);
                     }
                 }
             }
         }
 
-        private bool CanPlaceRectangle(int startX, int startZ, float width, float height)
+        private bool CanPlaceParkingSpace(int startX, int startZ, float width, float height)
         {
             if (startX + width > _gridWidth || startZ + height > _gridHeight)
             {
@@ -80,7 +80,7 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
             return true;
         }
 
-        private void PlaceRectangle(int startX, int startZ, float width, float height)
+        private void PlaceParkingSpace(int startX, int startZ, float width, float height)
         {
             for (int x = startX; x < startX + width; x++)
             {
@@ -90,15 +90,13 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
                 }
             }
         
-            GameObject rectangle = Instantiate(_platformView);
-            _cars.Add(rectangle);
+            GameObject parkingSpaceObj = Instantiate(_parkingSpace);
+            _cars.Add(parkingSpaceObj);
 
-            var platform = rectangle.GetComponent<PlatformView>();
+            ParkingSpace parkingSpace = parkingSpaceObj.GetComponent<ParkingSpace>();
             bool isHorizontal = width > height;
-            platform.GenerateModel(isHorizontal, _spacing);
-            platform.SetScaleForFrame(width, height);
-
-            rectangle.transform.position = new Vector3(startX + width / 2, 0, startZ + height / 2);
+            parkingSpaceObj.transform.position = new Vector3(startX + width / 2, 0, startZ + height / 2);
+            parkingSpace.GenerateCar(isHorizontal, _spacing);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
         
         private void MoveCar()
         {
-            _carMovementComponent.TryMove();
+            _carMovementComponent.Move();
         }
 
         private void OnDestroy()
