@@ -6,9 +6,9 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
     public class GenerateParking : MonoBehaviour
     {
         [SerializeField] private GameObject _parkingSpace;
-    
-        [SerializeField, Range(1,4)] private int _widthCar = 4;
-        [SerializeField, Range(1,3)] private int _heightCar = 1;
+
+        private const int WIDTH_CAR = 3;
+        private const int HEIGHT_CAR = 1;
         [SerializeField] private float _spacing = 0.3f;
 
         [SerializeField] private int _gridWidth = 10;
@@ -44,8 +44,8 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
                 for (int x = 0; x < _gridWidth; x++)
                 {
                     bool isHorizontal = Random.Range(0, 2) == 0;
-                    float width = isHorizontal ? _widthCar : _heightCar;
-                    float height = isHorizontal ? _heightCar : _widthCar;
+                    float width = isHorizontal ? WIDTH_CAR : HEIGHT_CAR;
+                    float height = isHorizontal ? HEIGHT_CAR : WIDTH_CAR;
                 
                     if (CanPlaceParkingSpace(x, z, width, height))
                     {
