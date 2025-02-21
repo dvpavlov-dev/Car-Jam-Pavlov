@@ -6,7 +6,7 @@ namespace Car_Jam_Pavlov.Player.Scripts
     {
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {
                 if (Camera.main is {} playerCamera)
                 {

@@ -20,10 +20,7 @@ namespace Car_Jam_Pavlov.Create_level.Scripts
                 _ => Instantiate(_carPrefab, transform.position, Quaternion.identity)
             };
         
-            bool reverseDirection = Random.Range(0, 2) == 0;
-            car.transform.rotation = Quaternion.Euler(0, isHorizontal ? 
-                reverseDirection ? 90 : -90 : 
-                reverseDirection ? 0 : 180, 0);
+            car.transform.rotation = Quaternion.Euler(0, isHorizontal ? 90 : 0, 0);
             car.transform.localScale = new Vector3(car.transform.localScale.x - spacing, 1, car.transform.localScale.z - spacing);
         }
 

@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 5339525545476349289, guid: c30d72554d5f01e458c69b87d9c49b41, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148703778537364052, guid: c30d72554d5f01e458c69b87d9c49b41, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7319729963536924422, guid: c30d72554d5f01e458c69b87d9c49b41, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
