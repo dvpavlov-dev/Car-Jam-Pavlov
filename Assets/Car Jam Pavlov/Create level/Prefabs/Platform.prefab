@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frame: {fileID: 1453817823520914522}
-  _carPrefab: {fileID: 4506655396714368626, guid: c30d72554d5f01e458c69b87d9c49b41, type: 3}
-  _smallBusPrefab: {fileID: 2374292064585725117, guid: af446a1d7ff3d6c489d15e66d352b0b2, type: 3}
-  _bigBusPrefab: {fileID: 5760873236125162981, guid: 385282cd3c32d244da90d5d312fd1816, type: 3}
+  _carPrefab: {fileID: 6116654307302275078, guid: 25ba5cf4c5debd84d898072a20a9a58d, type: 3}
+  _smallBusPrefab: {fileID: 9045764043014943174, guid: af446a1d7ff3d6c489d15e66d352b0b2, type: 3}
+  _bigBusPrefab: {fileID: 6026283074623806433, guid: 385282cd3c32d244da90d5d312fd1816, type: 3}
 --- !u!1 &6222935094417665574
 GameObject:
   m_ObjectHideFlags: 0
